@@ -36,15 +36,18 @@ public class UserServlet extends HttpServlet {
         request.setAttribute("users", users);
         request.getRequestDispatcher("/WEB-INF/user.jsp").forward(request, response);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+
+        List<String> datas = List.of(username, password, name, email);
+    }
 }
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String username = request.getParameter("username");
-//        String password = request.getParameter("password");
-//        String name = request.getParameter("name");
-//        String email = request.getParameter("email");
-//
-//        List<String> datas = List.of(username, password, name, email);
+
 //        for(String data : datas) {
 //            if(data == null) {
 //                response.getWriter().println("<script>alert("")</script>");
