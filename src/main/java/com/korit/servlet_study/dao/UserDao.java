@@ -63,6 +63,7 @@ public class UserDao {
     }
 
     public List<User> findAll() {
+
         List<User> users = new ArrayList<>();
         Connection con = null;
         PreparedStatement ps = null;

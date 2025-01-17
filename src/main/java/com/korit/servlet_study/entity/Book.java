@@ -13,12 +13,12 @@ public class Book {
     private int bookId;
     private String bookName;
     private String isbn;
-    private int authorId;
-    private int publisherId;
-    private int categoryId;
-    private String bookImgUrl;
+    private String author;
+    private String publisher;
+    private String category;
+    private String imgUrl;
 
-    private Author author;
-    private Publisher publisher;
-    private BookCategory bookCategory;
+    // private Author author;
+    // private Publisher publisher;
+    // private BookCategory bookCategory;
 }
