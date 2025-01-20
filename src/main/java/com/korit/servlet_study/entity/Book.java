@@ -10,15 +10,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class Book {
-    private int bookId;
+    private int bookID;
     private String bookName;
-    // private String isbn;
-    private String author;
-    private String publisher;
-    private String category;
-    private String imgUrl;
+    private String isbn;
+    private int authorID;
+    private int publisherID;
+    private int categoryID;
+    private String bookImgUrl;
 
-    // private Author author;
-    // private Publisher publisher;
-    // private BookCategory bookCategory;
+    private Author author;
+    private Publisher publisher;
+    private BookCategory bookCategory;
 }
+
