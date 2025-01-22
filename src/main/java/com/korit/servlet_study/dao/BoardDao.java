@@ -32,7 +32,7 @@ public class BoardDao {
     }
 
     // Board 객체를 DB에 저장하는 메서드
-    public Optional<Board> save(Board board) {
+    public Board save(Board board) {
         // 저장된 게시물을 담을 변수 선언
         Board insertedBoard = null;
         // DB 연결, PreparedStatement, ResultSet 객체 선언
@@ -76,6 +76,6 @@ public class BoardDao {
             dbConnectionMgr.freeConnection(con, ps);
         }
         // 삽입된 게시물 정보를 Optional로 감싸서 반환
-        return Optional.ofNullable(insertedBoard);
+        return insertedBoard;
     }
 }

@@ -12,7 +12,7 @@ public class InsertBoardDto {
     private String title;
     private String content;
 
-    public Board toBoard() {
+    public Board toBoard() { // entity 변환 빌더
         return Board.builder()
                 .title(title)
                 .content(content)
