@@ -37,7 +37,7 @@ public class AuthDao {
                         username,
                         password,
                         name,
-                        email,
+                        email
                     from
                         user_tb
                     where

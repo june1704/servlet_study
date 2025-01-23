@@ -18,7 +18,7 @@ public class SigninDto {
     public User toUser() {
         return User.builder()
                 .username(username)
-                .password(BCrypt.hashpw(password, BCrypt.gensalt(10)))
+                .password(password)
                 .build();
     }
 }
