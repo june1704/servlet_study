@@ -5,7 +5,6 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter("*")
 public class CorsFilter implements Filter {
 
     @Override
@@ -19,7 +18,8 @@ public class CorsFilter implements Filter {
 
         filterChain.doFilter(servletRequest, servletResponse);
         //리액트 - 톰캣 - 필터 - 서블렛 - 서비스 - 리포지터리 - db
-    }
+
+        }
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

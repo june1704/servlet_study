@@ -2,6 +2,7 @@ package com.korit.servlet_study.security.jwt;
 
 import com.korit.servlet_study.entity.User;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -42,11 +43,19 @@ public class JwtProvider {
     public Claims parseToken(String token) {
         Claims claims = null;
         try {
-            claims = Jwts.parserBuilder() // JWT를 파싱할 객체를 생성
-                    .setSigningKey(key)  // 토큰을 검증하기 위해 사용할 서명 키를 설정
-                    .build()             // 설정된 파서를 빌드
-                    .parseClaimsJws(removeBearer(token)) // JWT를 파싱하여 서명을 검증하고
-                    .getBody();          // 토큰의 Claims(본문) 부분을 가져옴
+            JwtParser jwtParser = Jwts.parserBuilder()
+                    .setSigningKey(key)
+                    .build();
+
+            claims = jwtParser
+                    .parseClaimsJws(removeBearer(token))
+                    .getBody();
+
+//            claims = Jwts.parserBuilder() // JWT를 파싱할 객체를 생성
+//                    .setSigningKey(key)  // 토큰을 검증하기 위해 사용할 서명 키를 설정
+//                    .build()             // 설정된 파서를 빌드
+//                    .parseClaimsJws(removeBearer(token)) // JWT를 파싱하여 서명을 검증하고
+//                    .getBody();          // 토큰의 Claims(본문) 부분을 가져옴
         } catch (Exception e) {
             e.printStackTrace();
         }

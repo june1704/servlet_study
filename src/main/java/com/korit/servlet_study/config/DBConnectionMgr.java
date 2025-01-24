@@ -246,7 +246,6 @@ public class DBConnectionMgr {
         }
     }
 
-
     private Connection createConnection()
             throws SQLException {
         Connection con = null;
